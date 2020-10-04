@@ -1,0 +1,24 @@
+{
+  "name": "facebookscraper",
+  "version": "1.0.0",
+  "description": "facebook scraper using puppeteer",
+  "main": "Facebookscraper.js",
+  "scripts": {
+    "test": "node Facebookscrapper.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoussefNour/FacebookScraper.git"
+  },
+  "keywords": [
+    "node",
+    "puppeteer",
+    "facebook"
+  ],
+  "author": "Youssef Ossama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YoussefNour/FacebookScraper/issues"
+  },
+  "homepage": "https://github.com/YoussefNour/FacebookScraper#readme"
+}
