@@ -27,16 +27,6 @@ const returncomments = async()=> {
     }
     return names;
   });
-
-  /*const result = await page.evaluate(()=>{
-    let names = [];
-    let elements = document.querySelectorAll('h3.bj');
-    for(var element of elements){
-      names.push(element.childNodes[0].innerText);
-    }
-  });
-*/
-
   await browser.close();
   return result;
 };
