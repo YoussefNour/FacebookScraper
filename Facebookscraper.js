@@ -1,8 +1,7 @@
 const fs = require('fs');
-const { config } = require('process');
 const puppeteer = require('puppeteer');
-//const config = require('./config.json');
-//const cookie = require('./cookie.json');
+const config = require('./config.json');
+
 
 const returncomments = async()=> {
   const browser = await puppeteer.launch({headless: false});
@@ -18,17 +17,25 @@ const returncomments = async()=> {
     await page.click('#loginbutton'),
     page.waitForNavigation({ waitUntil: 'networkidle0' })
   ]);
-  await page.goto("https://mbasic.facebook.com/ufi/reaction/profile/browser/fetch/?limit=300&shown_ids=780767132038952%2C579182156085282%2C356026561856132%2C285746978482265%2C109382980630665%2C100056153193881%2C100056152980811%2C100056103541744%2C100056078374155&total_count=265567&ft_ent_identifier=10159097462306803");
+  await page.goto("https://mbasic.facebook.com/ufi/reaction/profile/browser/fetch/?limit=988&shown_ids=100056141316845%2C100056110479231%2C100056074987258%2C100056073161508%2C100056012564335%2C100055988528027%2C100055942509291%2C100055894009196%2C100055820603348%2C100055814629374&total_count=988&ft_ent_identifier=10159157769811803");
   
   const result = await page.evaluate(()=>{
-    let names = [];
-    let elements = document.querySelectorAll('#root > table > tbody > tr > td > div > ul > li:nth-child(1) > table > tbody > tr > td > table > tbody > tr > td.s.bi > div > h3.bj');
+    let elements,names = [];
+    elements = document.querySelectorAll('h3.bj');
     for(var element of elements){
       names.push(element.innerText);
-      console.log(element);
     }
+    return names;
   });
 
+  /*const result = await page.evaluate(()=>{
+    let names = [];
+    let elements = document.querySelectorAll('h3.bj');
+    for(var element of elements){
+      names.push(element.childNodes[0].innerText);
+    }
+  });
+*/
 
   await browser.close();
   return result;

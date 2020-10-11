@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/YoussefNour/FacebookScraper/issues"
   },
-  "homepage": "https://github.com/YoussefNour/FacebookScraper#readme"
+  "homepage": "https://github.com/YoussefNour/FacebookScraper#readme",
+  "dependencies": {
+    "config": "^3.3.2",
+    "puppeteer": "^5.3.1"
+  }
 }
